@@ -12,6 +12,7 @@ birth_year_str = input("What year did you born? ")
 birth_year = int(birth_year_str)
 current_age = 2025 - birth_year
 hobbies = list()
+
 hobbie = input("Enter a favourite hobby or type 'stop' to finish: ")
 
 while hobbie != 'stop':
@@ -19,3 +20,7 @@ while hobbie != 'stop':
     hobbie = input("Enter a favourite hobby or type 'stop' to finish: ")
 
 life_stage = generate_profile(current_age)
+
+user_profile = {'name':user_name, 'age': current_age, 'stage':life_stage, 'hobbies_list':hobbies}
+#print(user_profile['hobbies_list'])
+print(f'Profile summary: \nName: {user_profile['name']}\nAge: {user_profile['age']}\nLife stage: {user_profile['stage']}\nFavorite hobbies({len(hobbies)}): ')
