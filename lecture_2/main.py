@@ -1,6 +1,10 @@
-def generate_profile(curent_age):
-    pass
-
+def generate_profile(age):
+    if 0<=age<=12:
+        return "Child"
+    elif 13<=age<=19:
+        return "Teenager"
+    return "Adult"
+    
 
 
 user_name = input("Hi, what is your name? ")
