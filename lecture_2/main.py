@@ -24,3 +24,4 @@ life_stage = generate_profile(current_age)
 user_profile = {'name':user_name, 'age': current_age, 'stage':life_stage, 'hobbies_list':hobbies}
 #print(user_profile['hobbies_list'])
 print(f'Profile summary: \nName: {user_profile['name']}\nAge: {user_profile['age']}\nLife stage: {user_profile['stage']}\nFavorite hobbies({len(hobbies)}): ')
+#hello
