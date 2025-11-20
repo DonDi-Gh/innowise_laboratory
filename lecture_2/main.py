@@ -19,9 +19,13 @@ while hobbie != 'stop':
     hobbies.append(hobbie)
     hobbie = input("Enter a favourite hobby or type 'stop' to finish: ")
 
+
 life_stage = generate_profile(current_age)
 
 user_profile = {'name':user_name, 'age': current_age, 'stage':life_stage, 'hobbies_list':hobbies}
-#print(user_profile['hobbies_list'])
-print(f'Profile summary: \nName: {user_profile['name']}\nAge: {user_profile['age']}\nLife stage: {user_profile['stage']}\nFavorite hobbies({len(hobbies)}): ')
-#hello
+
+print(f'--- \nProfile Summary: \nName: {user_profile['name']}\nAge: {user_profile['age']}\nLife Stage: {user_profile['stage']}')
+if not hobbies:
+    print("You didn't mention any hobbies.")
+else:
+    print(f"Favorite Hobbies({len(hobbies)}):\n - {'\n - '.join(hobbies) }\n---")
