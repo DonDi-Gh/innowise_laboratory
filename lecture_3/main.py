@@ -128,4 +128,4 @@ while command != 5:
             command = int(input())
         except ValueError:
             print("Enter a number: ", end = '')
-
+print("Exiting program.")
