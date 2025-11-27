@@ -50,7 +50,7 @@ def count_avg(studs):
     Function counting max average, min average and globak average 
     grades if the student has grades in the base'''
     avg_grades = []
-    counter = 0
+    counter: int = 0
     if len(studs) == 0:
         print("There's no students in the base\n")
         return False
@@ -64,6 +64,7 @@ def count_avg(studs):
     print("--------------------------------")
     print(f"Max Average: {format(max(avg_grades), '.1f')}\nMin Average: {format(min(avg_grades), '.1f')}\nAverall Average: {format(sum(avg_grades)/len(avg_grades), '.1f')}\n")
 
+
 def searching_max_avg(studs):
     '''Function searchs for max average frade
     
@@ -71,7 +72,7 @@ def searching_max_avg(studs):
     using lambda to do it'''
     highest_grade = 0
     avg_grades = []
-    counter = 0
+    counter:int = 0
     if len(studs) == 0:
         print("There's no students in the base\n")
         return False
@@ -99,7 +100,7 @@ menu_txt = '''--- Student Grade Analyzer ---
 5. Exit
 Enter your choise: '''
 
-command = 0
+command: int = 0
 print(menu_txt, end = '')
 while command == 0:
     try:
