@@ -1,5 +1,8 @@
-# Adding students
 def add_student(s_name, studs):
+    '''Adding new students
+    
+    This function adding new students to the base 
+    and creates poles with grades for them'''
     for student in studs:
         if student["name"] == s_name:
             print(f'Student {s_name} already exists')
@@ -11,8 +14,12 @@ def add_student(s_name, studs):
     print('Student succesfully added!\n')
 
 
-# Adding grades
 def add_grade(s_name, studs):
+    '''Adding grades
+    
+    This function adding grades for students
+    that already exists in the base and telling user
+    if they are not'''
     for student in studs:
         
         if student["name"] == s_name:
@@ -36,9 +43,12 @@ def add_grade(s_name, studs):
     print("The student isn't in the base yet\n")
     return False
 
-
-# Counting average grades    
+  
 def count_avg(studs):
+    '''This function counts average grades for students
+    
+    Function counting max average, min average and globak average 
+    grades if the student has grades in the base'''
     avg_grades = []
     counter = 0
     if len(studs) == 0:
@@ -54,8 +64,11 @@ def count_avg(studs):
     print("--------------------------------")
     print(f"Max Average: {format(max(avg_grades), '.1f')}\nMin Average: {format(min(avg_grades), '.1f')}\nAverall Average: {format(sum(avg_grades)/len(avg_grades), '.1f')}\n")
 
-
 def searching_max_avg(studs):
+    '''Function searchs for max average frade
+    
+    Search for the max average grade between all students that has grades,
+    using lambda to do it'''
     highest_grade = 0
     avg_grades = []
     counter = 0
@@ -93,7 +106,7 @@ while command == 0:
         command = int(input())
     except ValueError:
         print("Enter a number: ", end = '')
-
+# Menu
 while command != 5:
     if command == 1:
         name = input('Enter student name: ').capitalize()
