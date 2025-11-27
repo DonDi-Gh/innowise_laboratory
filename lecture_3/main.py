@@ -10,6 +10,7 @@ def add_student(s_name, studs):
     })
     print('Student succesfully added!\n')
 
+
 # Adding grades
 def add_grade(s_name, studs):
     for student in studs:
@@ -30,15 +31,13 @@ def add_grade(s_name, studs):
                     student["grades"].append(grade)
                     grade = input('Enter a grade, or "done" to finish: ')
                 else: grade = input("Grade out of range. Input grade from 0 to 100: ")
-            print("\n")
             return False  
         
     print("The student isn't in the base yet\n")
     return False
-    
 
 
-    
+# Counting average grades    
 def count_avg(studs):
     avg_grades = []
     counter = 0
@@ -51,20 +50,33 @@ def count_avg(studs):
             print(f"{student["name"]}'s average grade is {format(avg_grade, '.1f')}")
             avg_grades.append(avg_grade)
         except ZeroDivisionError:
-            print(f"Student {student["name"]} is N/A")
-    print("----------------------")
+            print(f"{student["name"]}'s average grade is N/A")
+    print("--------------------------------")
     print(f"Max Average: {format(max(avg_grades), '.1f')}\nMin Average: {format(min(avg_grades), '.1f')}\nAverall Average: {format(sum(avg_grades)/len(avg_grades), '.1f')}\n")
 
 
-  
+def searching_max_avg(studs):
+    highest_grade = 0
+    avg_grades = []
+    counter = 0
+    if len(studs) == 0:
+        print("There's no students in the base\n")
+        return False
+    
+    for student in studs:
+        try:
+            avg_grade = lambda student: sum(student["grades"])/len(student["grades"])
 
+            if avg_grade(student) > highest_grade:
+                highest_grade = avg_grade(student)
+                max_grade_student = student["name"]
 
-                
+        except ZeroDivisionError:
+            pass
 
-                
+    print(f"The student with highest average is {max_grade_student} with a grade of {format(highest_grade, '.1f')}\n")
 
-
-
+            
 students = []
 menu_txt = '''--- Student Grade Analyzer ---
 1. Add a new student
@@ -92,15 +104,8 @@ while command != 5:
     if command == 3:
         print("--- Student Report ---")
         count_avg(students)
-    
-            
-
-    
-
-
-
-
-
+    if command == 4:
+        searching_max_avg(students)
 
     command = 0
     print(menu_txt, end = '')
